@@ -10,6 +10,33 @@
   {
     "type": "item",
     "name": "Milk"
+  },
+  {
+    "type": "item",
+    "name": "Eggs"
+  },
+  {
+    "type": "item",
+    "name": "Chicken Breast"
+  },
+  {
+    "type": "item",
+    "name": "Rice"
+  },
+  {
+    "type": "item",
+    "name": "Apples"
+  },
+  {
+    "type": "item",
+    "name": "Butter"
+  },
+  {
+    "type": "item",
+    "name": "Cheese"
+  },
+  {
+    "type": "item",
+    "name": "Spinach"
   }
-
 ]

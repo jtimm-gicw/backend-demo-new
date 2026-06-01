@@ -6,14 +6,12 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
 
-  // Ignore dist folder
+  // Ignore build output
   globalIgnores(['dist']),
-
 
   // =========================
   // FRONTEND REACT FILES
   // =========================
-
   {
     files: ['src/**/*.{js,jsx}'],
 
@@ -25,9 +23,18 @@ export default defineConfig([
 
     languageOptions: {
 
-      // Browser globals for React
-      globals: globals.browser,
-      globals: globals.node, //for inline comments in server.js
+      // ✅ CHANGED:
+      // Previously you had:
+      // globals: globals.browser,
+      // globals: globals.node,
+      //
+      // The second line overwrote the first.
+      // If you need both browser and node globals,
+      // combine them with the spread operator.
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
 
       parserOptions: {
         ecmaFeatures: {
@@ -37,18 +44,19 @@ export default defineConfig([
     },
   },
 
-
   // =========================
   // BACKEND NODE FILES
   // =========================
-
   {
     files: ['server.js'],
 
     languageOptions: {
 
-      // Node globals for Express
-      globals: globals.node,
+      // ✅ CHANGED:
+      // Expanded to object format for consistency.
+      globals: {
+        ...globals.node,
+      },
     },
   },
 
